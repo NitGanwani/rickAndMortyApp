@@ -1,1 +1,54 @@
-<p>character-page works!</p>
+<ng-template #divLoading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+
+<div *ngIf="character; else divLoading" class="grid p-2">
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>{{character.name}}</mat-card-title>
+      <mat-card-subtitle>{{character.gender}}</mat-card-subtitle>
+    </mat-card-header>
+    <img [src]="character.image" [alt]="character.name">
+  </mat-card>
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>Character Info</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <span>Species:</span>
+          {{character.species}}
+        </mat-list-item>
+        <mat-list-item>
+          <span>Origin:</span>
+          {{character.origin.name}}
+        </mat-list-item>
+        <mat-list-item>
+          <span>Location:</span>
+          {{character.location.name}}
+        </mat-list-item>
+        <mat-list-item>
+          <span>Status:</span>
+          {{character.status}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button mat-raised color="primary" [routerLink]="['/characters/edit-character', character.id]">
+        <mat-icon>edit</mat-icon>
+        Edit
+      </button>
+      <span class="spacer"></span>
+      <button mat-button mat-raised color="primary" [routerLink]="['/characters']">
+        <mat-icon>arrow_back</mat-icon>
+        Back
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

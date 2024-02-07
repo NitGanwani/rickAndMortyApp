@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{character.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{character.species}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="character.image" [alt]="character.name">
+  <mat-card-content>
+    <h4>{{character.gender}}</h4>
+    <p>
+      <strong>Origin:</strong> {{character.origin.name}}
+      <br>
+      <mat-chip-listbox>
+        <mat-chip>
+          {{character.status}}
+        </mat-chip>
+      </mat-chip-listbox>
+    </p>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button mat-raised color="primary" [routerLink]="['/characters/edit-character', character.id]">
+      <mat-icon>edit</mat-icon>
+      Edit</button>
+
+    <span class="spacer"></span>
+
+    <button mat-button mat-raised color="primary" [routerLink]="['/characters', character.id]">
+      <mat-icon>more-horiz</mat-icon>
+      Info</button>
+  </mat-card-actions>
+</mat-card>

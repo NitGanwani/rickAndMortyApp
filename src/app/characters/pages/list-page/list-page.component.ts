@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Result } from '../../interfaces/character.interface';
+import { Character, Characters } from '../../interfaces/character.interface';
 import { CharacterService } from '../../services/characters.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CharacterService } from '../../services/characters.service';
   styles: [],
 })
 export class ListPageComponent implements OnInit {
-  public characters: Result[] = [];
+  public characters: Character[] = [];
 
   constructor(private charactersService: CharacterService) {}
   ngOnInit(): void {
