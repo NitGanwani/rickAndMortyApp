@@ -9,6 +9,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { MaterialModule } from '../material/material.module';
 import { CardComponent } from './components/card/card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,11 @@ import { CardComponent } from './components/card/card.component';
     EditPageComponent,
     CardComponent,
   ],
-  imports: [CommonModule, CharactersRoutingModule, MaterialModule],
+  imports: [
+    CommonModule,
+    CharactersRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
 })
 export class CharactersModule {}

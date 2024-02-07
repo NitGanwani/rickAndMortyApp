@@ -19,4 +19,8 @@ export class CharacterService {
       .get<Character>(`${this.baseUrl}/character/${id}`)
       .pipe(catchError((error) => of(undefined)));
   }
+
+  searchCharacters(query: string): Observable<Characters> {
+    return this.http.get<Characters>(`${this.baseUrl}/character?name=${query}`);
+  }
 }
