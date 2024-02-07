@@ -7,7 +7,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
-
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,8 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
     LayoutPageComponent,
     ListPageComponent,
     SearchPageComponent,
-    EditPageComponent
+    EditPageComponent,
   ],
-  imports: [
-    CommonModule,
-    CharactersRoutingModule
-  ]
+  imports: [CommonModule, CharactersRoutingModule, MaterialModule],
 })
-export class CharactersModule { }
+export class CharactersModule {}
