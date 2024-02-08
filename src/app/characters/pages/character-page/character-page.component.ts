@@ -20,7 +20,7 @@ export class CharacterPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        delay(2000),
+        delay(1000),
         switchMap(({ id }) => this.characterService.getCharacter(id))
       )
       .subscribe((character) => {

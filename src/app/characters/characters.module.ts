@@ -10,6 +10,7 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { MaterialModule } from '../material/material.module';
 import { CardComponent } from './components/card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TablePageComponent } from './pages/table-page/table-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchPageComponent,
     EditPageComponent,
     CardComponent,
+    TablePageComponent,
   ],
   imports: [
     CommonModule,

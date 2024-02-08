@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
-import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { CharacterPageComponent } from './pages/character-page/character-page.component';
+import { TablePageComponent } from './pages/table-page/table-page.component';
 
 const routes: Routes = [
   {
@@ -12,8 +12,8 @@ const routes: Routes = [
     component: LayoutPageComponent,
     children: [
       {
-        path: 'edit-character/:id',
-        component: EditPageComponent,
+        path: 'table',
+        component: TablePageComponent,
       },
       {
         path: 'search',
