@@ -8,36 +8,40 @@
 
 
 <div *ngIf="character; else divLoading" class="grid p-2">
-  <mat-card class="col-12 sm:col-6">
-    <mat-card-header>
+  <mat-card class="col-12 lg:col-4 p-3 shadow-5 surface-50">
+    <mat-card-header class="flex justify-content-center text-center">
       <mat-card-title>{{character.name}}</mat-card-title>
       <mat-card-subtitle>{{character.gender}}</mat-card-subtitle>
     </mat-card-header>
-    <img [src]="character.image" [alt]="character.name">
+    <div class="flex justify-content-center">
+      <img [src]="character.image" [alt]="character.name" class="w-7 rem h-auto">
+    </div>
   </mat-card>
-  <mat-card class="col-12 sm:col-6">
+  <mat-card class="col-12 lg:col-8 p-3 shadow-2 surface-50">
     <mat-card-header>
       <mat-card-title>Character Info</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-list>
-        <mat-list-item>
-          <span>Species:</span>
-          {{character.species}}
-        </mat-list-item>
-        <mat-list-item>
-          <span>Origin:</span>
-          {{character.origin.name}}
-        </mat-list-item>
-        <mat-list-item>
-          <span>Location:</span>
-          {{character.location.name}}
-        </mat-list-item>
-        <mat-list-item>
-          <span>Status:</span>
-          {{character.status}}
-        </mat-list-item>
-      </mat-list>
+      <div class="flex flex-column gap-2">
+        <mat-list>
+          <mat-list-item>
+            <span>Species:</span>
+            {{character.species}}
+          </mat-list-item>
+          <mat-list-item>
+            <span>Origin:</span>
+            {{character.origin.name}}
+          </mat-list-item>
+          <mat-list-item>
+            <span>Location:</span>
+            {{character.location.name}}
+          </mat-list-item>
+          <mat-list-item>
+            <span>Status:</span>
+            {{character.status}}
+          </mat-list-item>
+        </mat-list>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button mat-raised color="primary" [routerLink]="['/characters']">
@@ -47,3 +51,28 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-card class="col-12 sm:col-6">
+  <mat-card-header>
+    <mat-card-title>Character Info</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button mat-raised color="primary" [routerLink]="['/characters']">
+      <mat-icon>arrow_back</mat-icon>
+      Back
+    </button>
+  </mat-card-actions>
+</mat-card> -->

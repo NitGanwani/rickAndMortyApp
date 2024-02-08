@@ -5,7 +5,7 @@ import { CharacterService } from '../../services/characters.service';
 @Component({
   selector: 'app-table-page',
   templateUrl: './table-page.component.html',
-  styles: [],
+  styleUrls: ['./table-page.component.css'],
 })
 export class TablePageComponent implements OnInit {
   displayedColumns: string[] = ['name', 'species', 'gender', 'status']; // Columns to display

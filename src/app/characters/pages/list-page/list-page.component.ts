@@ -6,7 +6,6 @@ import { CharacterService } from '../../services/characters.service';
 @Component({
   selector: 'app-list-page',
   templateUrl: './list-page.component.html',
-  styles: [],
 })
 export class ListPageComponent implements OnInit {
   public characters: Character[] = [];
@@ -44,5 +43,9 @@ export class ListPageComponent implements OnInit {
 
   handlePageEvent(event: PageEvent) {
     this.goToPage(event.pageIndex + 1);
+  }
+
+  scrollToTop() {
+    window.scroll({ top: 0, behavior: 'smooth' });
   }
 }

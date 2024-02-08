@@ -14,11 +14,14 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-toolbar color="primary" class="flex justify-content-between">
-    <img src="../../../../assets/Rick-and-Morty.png" alt="Rick and Morty" class="w-14rem h-auto">
-    <button mat-icon-button (click)="sidenav.toggle()">
+  <mat-toolbar color="primary" class="flex align-items-center h-auto">
+    <button mat-icon-button (click)="sidenav.toggle()" class="ml-auto">
       <mat-icon>menu</mat-icon>
     </button>
+    <div class="flex-grow-1 flex justify-content-center">
+      <img src="../../../../assets/Rick-and-Morty.png" alt="Rick and Morty" class="w-20rem h-auto logo-hover"
+        (click)="navigateToList()">
+    </div>
   </mat-toolbar>
 
   <div class="container p-2">
