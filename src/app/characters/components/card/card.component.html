@@ -22,7 +22,7 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button mat-raised color="primary" [routerLink]="['/characters/edit-character', character.id]">
+    <button mat-button mat-raised color="primary" (click)="openEditDialog()">
       <mat-icon>edit</mat-icon>
       Edit</button>
 
