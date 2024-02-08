@@ -10,8 +10,12 @@ export class CharacterService {
 
   constructor(private http: HttpClient) {}
 
-  getCharacters(): Observable<Characters> {
-    return this.http.get<Characters>(`${this.baseUrl}/character`);
+  getCharacters(page?: number): Observable<Characters> {
+    let queryParams = '';
+    if (page) {
+      queryParams = `?page=${page}`;
+    }
+    return this.http.get<Characters>(`${this.baseUrl}/character${queryParams}`);
   }
 
   getCharacter(id: number): Observable<Character | undefined> {

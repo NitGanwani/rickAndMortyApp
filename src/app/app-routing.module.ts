@@ -4,10 +4,6 @@ import { ErrorPageComponent } from './shared/pages/error-page/error-page.compone
 
 const routes: Routes = [
   {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
-  },
-  {
     path: 'characters',
     loadChildren: () =>
       import('./characters/characters.module').then((m) => m.CharactersModule),

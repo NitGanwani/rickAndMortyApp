@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="w-20rem h-auto m-3">
   <mat-card-header>
     <mat-card-title>
       {{character.name}}
@@ -7,7 +7,7 @@
       {{character.species}}
     </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="character.image" [alt]="character.name">
+  <img mat-card-image [src]="character.image" [alt]="character.name" class="w-10rem h-auto m-2">
   <mat-card-content>
     <h4>{{character.gender}}</h4>
     <p>

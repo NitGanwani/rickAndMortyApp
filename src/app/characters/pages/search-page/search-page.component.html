@@ -12,5 +12,7 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  {{ selectedCharacter | json}}
+  <div *ngIf="selectedCharacter">
+    <characters-character-card [character]="selectedCharacter"></characters-character-card>
+  </div>
 </div>

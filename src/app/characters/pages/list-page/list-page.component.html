@@ -1,4 +1,4 @@
-<h1>Characters List</h1>
+<h1 class="flex justify-content-center mt-2">Characters List</h1>
 <mat-divider></mat-divider>
 
 <div class="grid bm-8 pt-2">
@@ -6,3 +6,6 @@
     <characters-character-card [character]="character"></characters-character-card>
   </div>
 </div>
+<mat-paginator [length]="totalPages" [pageSize]="1" [pageSizeOptions]="[1]" (page)="handlePageEvent($event)"
+  class="flex justify-content-center">
+</mat-paginator>

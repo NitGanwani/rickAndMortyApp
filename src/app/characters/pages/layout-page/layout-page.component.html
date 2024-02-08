@@ -1,8 +1,7 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
+  <mat-sidenav #sidenav mode="push" class="w-64">
     <mat-toolbar color="primary">
       <span>Menu</span>
-      <span class="spacer"></span>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>close</mat-icon>
       </button>
@@ -15,18 +14,14 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="flex justify-content-between">
+    <img src="../../../../assets/Rick-and-Morty.png" alt="Rick and Morty" class="w-14rem h-auto">
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
-    </button>
-    <span class="spacer"></span>
-    <button mat-button>
-      Logout
     </button>
   </mat-toolbar>
 
   <div class="container p-2">
     <router-outlet></router-outlet>
   </div>
-
 </mat-sidenav-container>
