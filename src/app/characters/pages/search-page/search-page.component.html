@@ -1,5 +1,11 @@
 <div class="flex flex-column p-2">
-  <h3>Search</h3>
+  <div>
+    <button mat-raised-button color="primary" [routerLink]="['/characters']">
+      <mat-icon>arrow_back</mat-icon>
+      Back
+    </button>
+  </div>
+  <h2 class="flex justify-content-center mb-4">SearchBox</h2>
   <mat-form-field>
     <mat-label>Search characters by name</mat-label>
     <input type="text" matInput [formControl]="searchInput" (input)="searchCharacter()" [matAutocomplete]="auto" />
