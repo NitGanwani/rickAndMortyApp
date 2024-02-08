@@ -44,8 +44,4 @@ export class ListPageComponent implements OnInit {
   handlePageEvent(event: PageEvent) {
     this.goToPage(event.pageIndex + 1);
   }
-
-  scrollToTop() {
-    window.scroll({ top: 0, behavior: 'smooth' });
-  }
 }

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of } from 'rxjs';
 import { Character, Characters } from '../interfaces/character.interface';
 import { environment } from 'src/environments/environment';
+import { Location } from '../interfaces/location.interface';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterService {
@@ -26,5 +27,11 @@ export class CharacterService {
 
   searchCharacters(query: string): Observable<Characters> {
     return this.http.get<Characters>(`${this.baseUrl}/character?name=${query}`);
+  }
+
+  getLocation(url: string): Observable<Location | undefined> {
+    return this.http
+      .get<Location>(url)
+      .pipe(catchError((error) => of(undefined)));
   }
 }

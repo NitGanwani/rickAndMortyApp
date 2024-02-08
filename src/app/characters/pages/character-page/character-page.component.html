@@ -1,78 +1,57 @@
 <ng-template #divLoading>
-  <mat-grid-list cols="1">
-    <mat-grid-tile>
-      <mat-spinner></mat-spinner>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="full-screen flex align-items-center justify-content-center">
+    <mat-spinner></mat-spinner>
+  </div>
 </ng-template>
 
 
-<div *ngIf="character; else divLoading" class="grid p-2">
-  <mat-card class="col-12 lg:col-4 p-3 shadow-5 surface-50">
-    <mat-card-header class="flex justify-content-center text-center">
-      <mat-card-title>{{character.name}}</mat-card-title>
-      <mat-card-subtitle>{{character.gender}}</mat-card-subtitle>
-    </mat-card-header>
-    <div class="flex justify-content-center">
-      <img [src]="character.image" [alt]="character.name" class="w-7 rem h-auto">
+<div *ngIf="character; else divLoading" class="grid p-2 mt-4">
+  <mat-card class="col-12 lg:col-4 p-3 shadow-8 surface-ground">
+    <div class="flex flex-column justify-content-center align-items-center">
+      <img [src]="character.image" [alt]="character.name" class="character-image">
+
+      <mat-card-header class="text-center">
+        <mat-card-title class="title">{{character.name}}</mat-card-title>
+        <mat-card-subtitle>{{character.gender}}</mat-card-subtitle>
+      </mat-card-header>
+
+
     </div>
   </mat-card>
-  <mat-card class="col-12 lg:col-8 p-3 shadow-2 surface-50">
+  <mat-card class="col-12 lg:col-8 p-4 shadow-8 surface-ground">
     <mat-card-header>
-      <mat-card-title>Character Info</mat-card-title>
+      <mat-card-title class="title">Character Info</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div class="flex flex-column gap-2">
-        <mat-list>
-          <mat-list-item>
-            <span>Species:</span>
-            {{character.species}}
-          </mat-list-item>
-          <mat-list-item>
-            <span>Origin:</span>
-            {{character.origin.name}}
-          </mat-list-item>
-          <mat-list-item>
-            <span>Location:</span>
-            {{character.location.name}}
-          </mat-list-item>
-          <mat-list-item>
-            <span>Status:</span>
-            {{character.status}}
-          </mat-list-item>
-        </mat-list>
+      <div class="info-section">
+        <div><strong>Species:</strong> {{character.species}}</div>
+        <div><strong>Origin:</strong> {{character.origin.name}}</div>
+        <div><strong>Location:</strong> {{character.location.name}}</div>
+        <div><strong>Status:</strong> {{character.status}}</div>
       </div>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button mat-raised color="primary" [routerLink]="['/characters']">
+    <mat-divider class="m-2"></mat-divider>
+    <div *ngIf="characterLocation">
+      <mat-card-header>
+        <mat-card-title class="title">Location Info</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="info-section">
+          <div><strong>Type:</strong> {{characterLocation.type}}</div>
+          <div><strong>Dimension:</strong> {{characterLocation.dimension}}</div>
+        </div>
+      </mat-card-content>
+    </div>
+    <ng-template #divLoading>
+      <div class=" full-screen flex align-items-center justify-content-center">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+    <mat-card-actions class="flex justify-content-center">
+      <button mat-button mat-raised-button color="primary" [routerLink]="['/characters']">
         <mat-icon>arrow_back</mat-icon>
         Back
       </button>
     </mat-card-actions>
   </mat-card>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <mat-card class="col-12 sm:col-6">
-  <mat-card-header>
-    <mat-card-title>Character Info</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button mat-raised color="primary" [routerLink]="['/characters']">
-      <mat-icon>arrow_back</mat-icon>
-      Back
-    </button>
-  </mat-card-actions>
-</mat-card> -->
