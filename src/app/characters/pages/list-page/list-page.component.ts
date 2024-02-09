@@ -29,18 +29,6 @@ export class ListPageComponent implements OnInit {
     this.loadCharacters(page);
   }
 
-  nextPage(): void {
-    if (this.currentPage < this.totalPages) {
-      this.loadCharacters(this.currentPage + 1);
-    }
-  }
-
-  previousPage(): void {
-    if (this.currentPage > 1) {
-      this.loadCharacters(this.currentPage - 1);
-    }
-  }
-
   handlePageEvent(event: PageEvent) {
     this.goToPage(event.pageIndex + 1);
   }
