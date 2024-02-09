@@ -8,7 +8,7 @@ import { CharacterService } from '../../services/characters.service';
   styleUrls: ['./table-page.component.css'],
 })
 export class TablePageComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'species', 'gender', 'status']; // Columns to display
+  displayedColumns: string[] = ['name', 'species', 'gender', 'status'];
   dataSource: Character[] = [];
 
   constructor(private characterService: CharacterService) {}
