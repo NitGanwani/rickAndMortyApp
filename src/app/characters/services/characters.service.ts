@@ -7,7 +7,7 @@ import { Location } from '../interfaces/location.interface';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterService {
-  private baseUrl: string = environment.baseUrl;
+  public baseUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 

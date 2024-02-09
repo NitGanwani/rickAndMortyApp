@@ -22,22 +22,22 @@ export class CharacterPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        delay(1000),
+        delay(500),
         switchMap(({ id }) => this.characterService.getCharacter(id)),
         switchMap((character) => {
           if (!character) {
             this.router.navigate(['/characters/list']);
-            return EMPTY; // If no character, stop further processing
+            return EMPTY;
           }
           this.character = character;
-          // Fetch the location data using the character's location url
+
           return character.location.url
             ? this.characterService.getLocation(character.location.url)
             : of(undefined);
         })
       )
       .subscribe((location) => {
-        this.characterLocation = location; // This may be undefined if there was an error
+        this.characterLocation = location;
       });
   }
 }
